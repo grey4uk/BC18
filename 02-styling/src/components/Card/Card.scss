@@ -1,0 +1,9 @@
+.cardLi {
+        padding: 10px;
+        border: 2px solid var(--title-grey);
+        border-radius: 20px;
+
+        &:not(:last-child) {
+                margin-bottom: 20px;
+        }
+}

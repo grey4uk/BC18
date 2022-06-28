@@ -1,0 +1,32 @@
+[
+        {
+                "name": "Petro",
+                "id": 1,
+                "friends": [
+                        "Anna",
+                        "Ivan",
+                        "Roman"
+                ],
+                "inTheBase": true
+        },
+        {
+                "name": "Andriy",
+                "id": 2,
+                "friends": [
+                        "Anna",
+                        "Petro",
+                        "Mariya"
+                ],
+                "inTheBase": false
+        },
+        {
+                "name": "Olha",
+                "id": 3,
+                "friends": [
+                        "Petro",
+                        "Andriy",
+                        "Roman"
+                ],
+                "inTheBase": true
+        }
+]

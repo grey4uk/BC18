@@ -1,0 +1,22 @@
+
+- Ванільний  CSS и препроцессори
+- Інлайн стилі
+- CSS-модули
+- Нормалізація стилів
+- CSS in JS с бібліотекою styled components 
+- Библиотека react-icons
+- Material ui
+
+
+
+
+-------------Global variables---------
+:root {
+        --marine: rgb(149, 225, 211);
+        --red: rgb(243, 129, 129);
+        --white: rgb(255, 255, 255);
+        --main-grey: rgb(153, 153, 153);
+        --title-grey: rgb(51, 51, 51);
+        --context-grey: rgb(229, 229, 229);
+        --body-text: 'Roboto', 'Arial', sans-serif;
+}
