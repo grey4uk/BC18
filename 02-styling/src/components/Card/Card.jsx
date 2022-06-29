@@ -17,7 +17,8 @@ const Card = ({
   return (
     <li
       className={
-        inTheBase ? s.cardLiInBase : s.cardLiOutBase
+        s.cardLi
+        // inTheBase ? s.cardLiInBase : s.cardLiOutBase
       }>
       {/* <li className='container'> */}
       <div

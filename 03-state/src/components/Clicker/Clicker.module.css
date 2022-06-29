@@ -1,0 +1,11 @@
+.clicker {
+        min-width: 20vw;
+        padding: 40px 20px;
+        background-color: var(--marine);
+        border-radius: 10%;
+        flex-direction: column;
+}
+
+.content {
+        font-size: 72px;
+}

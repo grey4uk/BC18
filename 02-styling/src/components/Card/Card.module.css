@@ -1,7 +1,10 @@
+@value colorRed from '../../theme/theme.module.css';
+
 .cardLi {
         padding: 10px;
         border: 2px solid var(--title-grey);
         border-radius: 20px;
+        background: colorRed;
 }
 
 .cardLi:not(:last-child) {
@@ -10,10 +13,10 @@
 
 .cardLiInBase {
         composes: cardLi;
-        background: var(--active)
+        background: var(--active);
 }
 
 .cardLiOutBase {
         composes: cardLi;
-        background: var(--unactive)
+        background: var(--unactive);
 }
