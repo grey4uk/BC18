@@ -6,6 +6,7 @@ import TrafficLights from 'components/TrafficLights/TrafficLights';
 import Container from 'components/Container/Container';
 import ToDosView from 'Views/ToDosView';
 import AuthView from 'Views/AuthView';
+import Button from 'components/Button/Button';
 
 // const App = () => {
 //   return (
@@ -39,11 +40,13 @@ class App extends React.Component {
         <Container>
           <AuthView />
         </Container>
-        <Container>
+        <Container addedStyle={{ gap: '5vw' }}>
           {Object.keys(views).map((el) => (
-            <button key={el} name={el} onClick={chooseView}>
-              {el}
-            </button>
+            <Button
+              key={el}
+              title={el}
+              handleClick={chooseView}
+            />
           ))}
         </Container>
         <Container> {component}</Container>

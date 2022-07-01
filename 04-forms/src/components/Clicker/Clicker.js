@@ -37,24 +37,30 @@ class Clicker extends Component {
 
   render() {
     const { increase, state } = this;
+    const content = state['value'];
     //     console.log('this.props', this.props);
     //     console.log('re-render>>>>>>>>>');
     return (
       <div className='container'>
         <div className={`container ${s.clicker}`}>
-          <p className={s.content}>{state['value']}</p>
-          <div>
-            <IconButton
-              aria-label='delete'
-              onClick={this.decrease}>
-              <DeleteIcon />
-            </IconButton>
-            <IconButton
-              color='primary'
-              aria-label='add to shopping cart'
-              onClick={increase}>
-              <AddShoppingCartIcon />
-            </IconButton>
+          <p className={s.content}>{content}</p>
+          <div className={s.buttonBox}>
+            <div
+              onClick={content ? this.decrease : null}
+              style={{ opacity: content ? 1 : 0.4 }}>
+              DECREASE
+              <IconButton aria-label='delete'>
+                <DeleteIcon />
+              </IconButton>
+            </div>
+            <div onClick={increase}>
+              INCREASE
+              <IconButton
+                color='primary'
+                aria-label='add to shopping cart'>
+                <AddShoppingCartIcon />
+              </IconButton>
+            </div>
           </div>
         </div>
       </div>

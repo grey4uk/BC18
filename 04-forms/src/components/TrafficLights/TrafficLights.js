@@ -1,3 +1,4 @@
+import Button from 'components/Button/Button';
 import { Component } from 'react';
 import { colors } from './colors';
 import s from './TrafficLights.module.css';
@@ -62,7 +63,7 @@ class TrafficLights extends Component {
         {/* <button type='button' onClick={iterator}>
           START
         </button> */}
-        <div className='container'>
+        <div className={`container ${s.lightBox}`}>
           {colors.map((el) => (
             <div
               key={el.label}
@@ -73,12 +74,16 @@ class TrafficLights extends Component {
           ))}
         </div>
         <div>
-          <button type='button' onClick={start}>
-            START
-          </button>
-          <button type='button' onClick={stop}>
-            STOP
-          </button>
+          <Button
+            type='button'
+            title='START'
+            handleClick={start}
+          />
+          <Button
+            type='button'
+            title='STOP'
+            handleClick={stop}
+          />
         </div>
       </div>
     );

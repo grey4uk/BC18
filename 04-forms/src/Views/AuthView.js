@@ -89,6 +89,7 @@ class AuthView extends Component {
 
   navigateAuth = () => {
     // change flag on opposite
+    this.setState((prev) => ({ flag: !prev.flag }));
   };
 
   render() {

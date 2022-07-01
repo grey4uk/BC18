@@ -1,3 +1,7 @@
+.lightBox {
+        gap: 20px;
+}
+
 .light {
         display: block;
         width: 60px;

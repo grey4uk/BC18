@@ -39,5 +39,10 @@ Card.propTypes = {
 };
 
 // type:PropTypes.oneOf(['active',"unactive",""])
+// type: PropTypes.oneOf([
+//   { a: PropTypes.string, b: PropTypes.number },
+//   '',
+//   null,
+// ]);
 
 export default Card;
