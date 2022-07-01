@@ -7,6 +7,7 @@ import Container from 'components/Container/Container';
 import ToDosView from 'Views/ToDosView';
 import AuthView from 'Views/AuthView';
 import Button from 'components/Button/Button';
+import GalleryView from 'Views/GalleryView';
 
 // const App = () => {
 //   return (
@@ -23,32 +24,37 @@ const views = {
   clicker: <Clicker />,
   trafficLights: <TrafficLights />,
   todos: <ToDosView />,
+  gallery: <GalleryView />,
 };
 
 class App extends React.Component {
-  state = { component: null, islogedIn: false };
+  state = { component: null, isLogedIn: true };
 
   chooseView = ({ target: { name } }) => {
     this.setState({ component: views[name] });
   };
 
   render() {
-    const { component } = this.state;
+    const { component, isLogedIn } = this.state;
     const { chooseView } = this;
     return (
       <Container addedStyle={{ flexDirection: 'column' }}>
-        <Container>
-          <AuthView />
-        </Container>
-        <Container addedStyle={{ gap: '5vw' }}>
-          {Object.keys(views).map((el) => (
-            <Button
-              key={el}
-              title={el}
-              handleClick={chooseView}
-            />
-          ))}
-        </Container>
+        {isLogedIn ? (
+          <Container addedStyle={{ gap: '5vw' }}>
+            {Object.keys(views).map((el) => (
+              <Button
+                key={el}
+                title={el}
+                handleClick={chooseView}
+              />
+            ))}
+          </Container>
+        ) : (
+          <Container>
+            <AuthView />
+          </Container>
+        )}
+
         <Container> {component}</Container>
       </Container>
     );

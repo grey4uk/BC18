@@ -155,7 +155,6 @@ class ToDoForm extends React.Component {
                     onChange={handleChange}
                   />
                 }
-                disapled={priority === el}
                 label={el}
               />
             ))}

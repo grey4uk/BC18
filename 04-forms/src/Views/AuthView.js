@@ -105,14 +105,12 @@ class AuthView extends Component {
       <Container
         component='main'
         maxWidth='xs'
-        // className={classes.paper}
-      >
+        style={classes.paper}>
         <h1>{flag ? 'REGISTER' : 'LOGIN'}</h1>
         <Grid item xs={12}>
           <FormControl
             variant='outlined'
-            //     className={classes.formControl}
-          >
+            style={classes.formControl}>
             <TextField
               autoComplete={email || 'Email'}
               name='email'
@@ -129,8 +127,7 @@ class AuthView extends Component {
         <Grid item xs={12}>
           <FormControl
             variant='outlined'
-            //     className={classes.formControl}
-          >
+            style={classes.formControl}>
             <TextField
               autoComplete={password || 'Password'}
               name='password'
@@ -149,7 +146,7 @@ class AuthView extends Component {
             type='submit'
             variant='contained'
             color='primary'
-            //     className={classes.submit}
+            style={classes.submit}
             onClick={flag ? onRegister : onLogin}>
             {flag ? 'REGISTER' : 'LOGIN'}
           </Button>
