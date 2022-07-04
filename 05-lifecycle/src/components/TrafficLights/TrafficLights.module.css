@@ -1,0 +1,15 @@
+.lightBox {
+        gap: 20px;
+}
+
+.light {
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+}
+
+.active {
+        border: 10px solid var(--title-grey);
+        transform: scale(1.2);
+}
