@@ -60,8 +60,10 @@ const ImageGallery = ({ perPage, onChange }) => {
   };
 
   const toogleModal = (img) => {
+    const index = images.indexOf(img) + 1;
+    console.log('index', index);
     setIsShow(!isShow);
-    setSlide(slide ? 1 : images.indexOf(img) + 1);
+    setSlide(index);
   };
 
   const fetchPhotos = useCallback(async () => {
