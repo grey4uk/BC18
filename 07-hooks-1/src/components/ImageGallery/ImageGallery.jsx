@@ -109,29 +109,53 @@ const ImageGallery = ({ perPage, onChange }) => {
     return () => {
       document.removeEventListener('click', handleClick);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchPhotos]);
 
-  // const fetchPhotos = async (county) => {
-  //   setIsLoading(true);
-  //   error && setError('');
+  // useEffect(() => {
 
-  //   await getDogsImages(county)
-  //     .then((result) => {
-  //       if (result.status === 200) {
-  //         setImages([...images, ...result.data.message]);
-  //         setStatus(StatusCode.SUCCESS);
-  //         return;
-  //       } else {
-  //         setError('Bad request');
+  //   const fetchPhotos=async () => {
+  //     setIsLoading(true);
+  //     setError('');
+
+  //     await getDogsImages(perPage)
+  //       .then((result) => {
+  //         if (result.status === 200) {
+  //           setImages((prev) => [
+  //             ...prev,
+  //             ...result.data.message,
+  //           ]);
+  //           setStatus(StatusCode.SUCCESS);
+  //           return;
+  //         } else {
+  //           setError('Bad request');
+  //           setStatus(StatusCode.ERROR);
+  //         }
+  //       })
+  //       .catch((err) => {
+  //         setError(err.message);
   //         setStatus(StatusCode.ERROR);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       setError(err.message);
-  //       setStatus(StatusCode.ERROR);
-  //     })
-  //     .finally(() => setIsLoading(false));
-  // };
+  //       })
+  //       .finally(() => setIsLoading(false));
+  //   }
+  //   const imagesFromStorage = JSON.parse(
+  //     localStorage.getItem(constants.IMAGES)
+  //   );
+
+  //   if (imagesFromStorage) {
+  //     imagesFromStorage.length
+  //       ? this.setState({ images: imagesFromStorage })
+  //       : fetchPhotos();
+  //     return;
+  //   }
+
+  //   fetchPhotos();
+
+  //   document.addEventListener('click', handleClick);
+  //   return () => {
+  //     document.removeEventListener('click', handleClick);
+  //   };
+  // }, [perPage]);
 
   const handleChange = ({ target: { name, value } }) =>
     onChange(Number(value));

@@ -1,0 +1,6 @@
+-----------------Hooks---------------------------
+- useMemo и React.memo
+- useCallback
+- useReducer
+- Кастомные хуки
+- Библиотека react-use
