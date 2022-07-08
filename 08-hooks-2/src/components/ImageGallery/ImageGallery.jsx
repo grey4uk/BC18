@@ -59,6 +59,8 @@ const ImageGallery = ({ perPage, onChange }) => {
     setSlide(index);
   };
 
+  // console.log('storage :>> ', storage);
+
   const fetchPhotos = useCallback(() => {
     setIsLoading(true);
     setError('');
@@ -85,7 +87,8 @@ const ImageGallery = ({ perPage, onChange }) => {
         setStatus(StatusCode.ERROR);
       })
       .finally(() => setIsLoading(false));
-  }, [perPage, setStorage]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [perPage]);
 
   useEffect(() => {
     if (!storage?.length) {
