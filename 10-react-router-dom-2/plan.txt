@@ -1,0 +1,14 @@
+-----------------Hooks---------------------------
+- Navlink - додаткові стилі;
+- індексні маршрути і Layout(незмінна розмітка для всіх сторінок);
+- хук useNavigate і компонент <Navigate to="/" replace />;
+- const [searchParams, setSearchParams] = useSearchParams() для отримання параметрів пошуку і  URLSearchParams
+  const [searchParams] = useSearchParams();
+  const name = searchParams.get("name");
+  Перетворення параметрів в об'єкт параметрів:
+  const params = useMemo(
+  () => Object.fromEntries([...searchParams]),
+  [searchParams]
+);
+- useLocation, зберігання ключа from в location.state
+- code spliting

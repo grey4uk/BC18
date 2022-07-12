@@ -1,0 +1,26 @@
+.linkLi {
+        padding: 10px;
+        border-radius: 5px;
+}
+
+.linkLi:hover {
+        opacity: 0.5
+}
+
+.link {
+        padding: 10px;
+        border-radius: 5px;
+}
+
+
+.active {
+        composes: link;
+        background-color: rgb(198, 196, 196);
+        color: tomato;
+}
+
+.unactive {
+        composes: link;
+        background-color: rgb(130, 128, 128);
+        color: black;
+}
