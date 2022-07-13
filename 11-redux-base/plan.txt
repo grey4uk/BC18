@@ -1,0 +1,9 @@
+-----------------Hooks---------------------------
+ - store, type, actions, reducers;
+ - createStore(reducer,[preloadedState],[enhancer]);
+  middlewares(const customMiddleWare = store => next => action => {
+  console.log("Middleware triggered:", action);
+  next(action);
+})
+ - react-redux: Provider , useDispatch, useSelector;
+ - redux-toolkit, configureStore, createAction, createReducer
