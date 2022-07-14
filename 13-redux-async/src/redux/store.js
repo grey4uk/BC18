@@ -8,6 +8,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import thunk from 'redux-thunk';
 
 import rootReducer from './rootReducer';
 
@@ -37,7 +38,9 @@ export const store = configureStore({
           REGISTER,
         ],
       },
-    }).concat(customMiddleWare),
+    })
+      .concat(customMiddleWare)
+      .concat(thunk),
   devTools: process.env.NODE_ENV !== 'production',
   preloadedState,
 });

@@ -51,13 +51,13 @@ const App = () => {
   console.log('todos', todos);
   console.log('state', state);
 
-  const mydispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const onSubmitForm = (e) => {
     e.preventDefault();
     const form = e.target;
 
-    mydispatch(
+    dispatch(
       addTodoAction({ title: form.elements.todo.value })
     );
     form.reset();
@@ -72,12 +72,12 @@ const App = () => {
       <div>
         <button
           type='button'
-          onClick={() => mydispatch(increment())}>
+          onClick={() => dispatch(increment())}>
           INCREMENT
         </button>
         <button
           type='button'
-          onClick={() => mydispatch(decrement())}>
+          onClick={() => dispatch(decrement())}>
           DECREMENT
         </button>
       </div>

@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 import {
   increment,
@@ -6,7 +7,11 @@ import {
 } from 'redux/counter/actions';
 import { counterSelector } from 'redux/counter/selectors';
 import { todosSelector } from 'redux/todos/selectors';
-import { addTodoAction } from 'redux/todos/actions';
+import { addTodoAction } from 'redux/todos/slice';
+import {
+  initTodosAsyncThunk,
+  initTodosOperation,
+} from 'redux/todos/operations';
 
 const App = () => {
   const count = useSelector(counterSelector);
@@ -27,6 +32,11 @@ const App = () => {
     );
     form.reset();
   };
+
+  useEffect(() => {
+    mydispatch(initTodosAsyncThunk({ id: 123 }));
+    // mydispatch(initTodosOperation());
+  }, []);
 
   return (
     <>
