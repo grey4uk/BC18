@@ -1,0 +1,18 @@
+.loaderWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(226, 215, 200, 0.449);
+}
+
+.loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+}

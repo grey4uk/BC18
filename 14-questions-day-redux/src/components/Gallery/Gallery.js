@@ -10,7 +10,9 @@ import {
 
 const Gallery = () => {
   const dispatch = useDispatch();
-  const images = useSelector(galleryItemsSelector);
+  const images = useSelector((state) =>
+    galleryItemsSelector(state)
+  );
   const loading = useSelector(galleryLoadingSelector);
   const error = useSelector(galleryErrorSelector);
   useEffect(() => {
