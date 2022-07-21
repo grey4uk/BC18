@@ -46,10 +46,10 @@ function AuthView() {
     },
   };
 
-  const navigateUser = () => {
-    navigate('/clicker');
-    reset();
-  };
+  // const navigateUser = () => {
+  //   // navigate('/clicker');
+  //   reset();
+  // };
 
   const handleChangeInput =
     (name) =>
@@ -63,12 +63,16 @@ function AuthView() {
 
   const onRegister = (e) => {
     e.preventDefault();
-    dispatch(signUp({ email, password, navigateUser }));
+    dispatch(
+      signUp({ email, password, navigateUser: reset })
+    );
   };
 
   const onLogin = (e) => {
     e.preventDefault();
-    dispatch(logIn({ email, password, navigateUser }));
+    dispatch(
+      logIn({ email, password, navigateUser: reset })
+    );
   };
 
   const navigateAuth = () => {
