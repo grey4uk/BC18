@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Routes,
   Route,
@@ -20,15 +20,17 @@ import PublicRoute from 'components/Routes/PublicRoute';
 
 const App = () => {
   const [searchParams] = useSearchParams();
-  console.log(
-    'accessToken>>>',
-    searchParams.get('accessToken')
-  );
-  console.log(
-    'refreshToken>>>',
-    searchParams.get('refreshToken')
-  );
-  console.log('sid>>>', searchParams.get('sid'));
+  useEffect(() => {
+    const token = searchParams.get('accessToken');
+    if (token) {
+      console.log('accessToken>>>', token);
+      console.log(
+        'refreshToken>>>',
+        searchParams.get('refreshToken')
+      );
+      console.log('sid>>>', searchParams.get('sid'));
+    }
+  }, [searchParams]);
   return (
     <ErrorBoundary>
       <ClickerProvider>

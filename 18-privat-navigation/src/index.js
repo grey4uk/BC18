@@ -18,23 +18,24 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
+  // <HashRouter>
+  //   <Provider store={store}>
+  //     <PersistGate loading={null} persistor={persistor}>
+  //       <App />
+  //     </PersistGate>
+  //   </Provider>
+  // </HashRouter>
   <BrowserRouter>
+    {/* <React.StrictMode> */}
+    {/* <HashRouter> */}
+
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <App />
       </PersistGate>
     </Provider>
-  </BrowserRouter>
 
-  // <React.StrictMode>
-  //   {/* <HashRouter> */}
-  //   <BrowserRouter>
-  //     <Provider store={store}>
-  //       <PersistGate loading={null} persistor={persistor}>
-  //         <App />
-  //       </PersistGate>
-  //     </Provider>
-  //   </BrowserRouter>
-  //   {/* </HashRouter> */}
-  // </React.StrictMode>
+    {/* </HashRouter> */}
+    {/* </React.StrictMode> */}
+  </BrowserRouter>
 );
