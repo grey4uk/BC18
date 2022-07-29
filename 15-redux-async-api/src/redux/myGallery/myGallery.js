@@ -12,10 +12,12 @@ export const savedGalleryApi = createApi({
   tagTypes: ['images'],
   endpoints: (builder) => ({
     getMyImages: builder.query({
-      query: () => ({
-        url: `/images`,
-        method: 'GET',
-      }),
+      query: () => {
+        return {
+          url: `/images`,
+          method: 'GET',
+        };
+      },
       // perPage ? `/random/${perPage}` : '',
       transformResponse: (data) => {
         // return data.map((el) => el.image);

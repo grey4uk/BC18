@@ -1,5 +1,10 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import {
+  Routes,
+  Route,
+  useSearchParams,
+  Navigate,
+} from 'react-router-dom';
 
 import TrafficLights from 'components/TrafficLights/TrafficLights';
 import ToDosView from 'Views/ToDosView';
@@ -14,11 +19,21 @@ import PrivateRoute from 'components/Routes/PrivateRoute';
 import PublicRoute from 'components/Routes/PublicRoute';
 
 const App = () => {
+  const [searchParams] = useSearchParams();
+  console.log(
+    'accessToken>>>',
+    searchParams.get('accessToken')
+  );
+  console.log(
+    'refreshToken>>>',
+    searchParams.get('refreshToken')
+  );
+  console.log('sid>>>', searchParams.get('sid'));
   return (
     <ErrorBoundary>
       <ClickerProvider>
         <Routes>
-          <Route path='/' element={<Layout />}>
+          <Route path='/auth' element={<Layout />}>
             <Route
               index
               element={
@@ -73,8 +88,15 @@ const App = () => {
               path='home'
               element={<h1>Hello dear friend!!</h1>}
             />
-            <Route path='*' element={<AuthView />} />
+            <Route
+              path='*'
+              element={<Navigate to='/auth' />}
+            />
           </Route>
+          <Route
+            path='*'
+            element={<Navigate to='/auth' />}
+          />
         </Routes>
       </ClickerProvider>
     </ErrorBoundary>

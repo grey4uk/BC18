@@ -13,6 +13,7 @@ import {
 export const todosSlice = createSlice({
   name: 'TODOS',
   initialState: [],
+  reducers:{},
   extraReducers: {
     [getAllTodos.fulfilled]: (_, { payload }) => {
       return payload;
